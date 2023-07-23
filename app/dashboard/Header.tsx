@@ -180,29 +180,29 @@ const Header = () => {
             My Profile
           </Link>
         </li>
-        <li>
+        {/* <li>
           <a href="dashboard-favorites.html">
             <span className="icon-Favorite-Window" />
             My Favorites
           </a>
-        </li>
+        </li> */}
         <li>
-          <a href="dashboard-account.html">
+          <Link href="/dashboard/account">
             <span className="icon-Gears" />
             Account Details
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#!">
+          <Link href="/dashboard/support">
             <span className="icon-Life-Safer" />
             Help/Support
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="index.html">
+          <Link href="/">
             <span className="icon-Power-3" />
             Log Out
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
@@ -262,34 +262,34 @@ const Header = () => {
   </div>
   <ul id="mobile-menu-pro" className="collapsed" style={isMenu?{ display: "block" }:{display: "none"}}>
     <li>
-      <a href="dashboard-home.html">
+      <Link href="/dashboard">
         <span className="icon-Old-TV" />
         Earn Studio
-      </a>
+      </Link>
     </li>
     <li></li>
     <li>
-      <a href="dashboard-movies.html">
+      <Link href="/dashboard/affiliate">
         <span className="icon-Reel" />
-        Movies
-      </a>
+        Affiliates
+      </Link>
     </li>
     <li>
-      <a href="dashboard-playlists.html">
+      <a href="/dashboard/leaderboard">
         <span className="icon-Movie" />
-        Playlists
+        LeaderBoard
       </a>
     </li>
     <li>
-      <a href="dashboard-new-arrivals.html">
+      <a href="/dashboard/offers">
         <span className="icon-Movie-Ticket" />
-        New Arrivals
+        Offers
       </a>
     </li>
     <li>
-      <a href="dashboard-coming-soon.html">
+      <a href="/dashboard/sponsored">
         <span className="icon-Clock" />
-        Coming Soon
+        Sponsored post
       </a>
     </li>
     <li>

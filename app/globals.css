@@ -6,3 +6,77 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .menu-item{
+        @apply hover:bg-slate-100 hover:text-black p-3 w-full
+    }
+    
+    .current-menu-item{
+        @apply bg-slate-200 
+    }
+
+    .active{
+        @apply shadow-lg md:shadow-2xl rounded-md
+    }
+
+    .title{
+        @apply font-bold text-2xl
+    }
+
+    .li__wrapper {
+        @apply p-4 flex items-start space-x-4
+    }
+
+    .icon {
+        @apply p-4 rounded-md 
+    }
+
+    .shape {
+        @apply bg-gray-200 w-full h-[25rem] absolute z-[-1] top-24 rounded-md
+    }
+}
+
+
+
+.mobile-btn {
+    display: inline-block;
+    width: 30px;
+    height: 6px;
+    background:gray;
+    border-radius: 5px;
+    transition: all 200ms ease-in-out;
+}
+
+.mobile-btn::before ,
+.mobile-btn:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 35px;
+    height: 6px;
+    background:gray;
+    border-radius: 5px;
+    transition: all 250ms ease-in-out;
+}
+
+.mobile-btn::before{
+    transform: translateY(16px);
+}
+
+.mobile-btn::after{
+    transform: translateY(-16px);
+}
+
+.menu-btn.open .mobile-btn{
+    transform:translateX(-50px);
+    background: transparent;
+    box-shadow:none;
+}
+
+.menu-btn.open .mobile-btn::before {
+    transform: rotate(45deg) translate(35px,-35px)
+}
+
+.menu-btn.open .mobile-btn::after {
+    transform: rotate(-45deg) translate(35px,35px)
+}
