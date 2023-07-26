@@ -4,7 +4,7 @@ import { faArrowRightLong, faArrowLeftLong } from '@fortawesome/free-solid-svg-i
 
 const Testimonial = () => {
   return (
-    <section className='p-2 mt-10'>
+    <section className='p-2 mt-5 md:mt-10'>
       <div className='text-center md:text-left'>
         <h2 className='title text-3xl'>What Our Users Have Earned so Far</h2>
         <p className='text-center text-md mt-3'>Our users from all over the world share their lovely words about us.</p>

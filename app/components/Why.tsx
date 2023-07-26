@@ -2,7 +2,7 @@ import React from 'react'
 
 const Why:React.FC = () => {
   return (
-  <section className='p-2'>
+  <section className='p-2 mt-5 md:mt-10'>
 <div className="w-full">
   <div className="flex flex-col md:flex-row lg:justify-between">
     <div className="w-full md:w-1/2">

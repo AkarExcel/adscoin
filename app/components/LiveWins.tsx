@@ -16,7 +16,7 @@ const LiveWins: React.FC = () => {
   ];
   
   return (
-    <section className='flex flex-col w-full px-4'>
+    <section className='flex flex-col w-full px-4 mt-10'>
       <div className='flex gap-x-3 items-center'>
         <span className='w-2 h-2 rounded-full bg-red-700 animate-ping'  />
         <h2 className='font-black'>LIVE EARNINGS</h2>

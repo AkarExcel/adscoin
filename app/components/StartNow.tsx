@@ -2,7 +2,7 @@ import React from 'react'
 
 const StartNow = () => {
   return (
-    <section className='mt-5 text-center'>
+    <section className='mt-5 md:mt-10 text-center'>
       <div>
         <p>Start Earning Immediately!</p>
         <h3 className='title text-4xl'>Join Adscoin To Start Learning And Earning in Web3</h3>
