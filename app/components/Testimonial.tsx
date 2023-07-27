@@ -15,7 +15,7 @@ const Testimonial = () => {
           <div className='m-4  shadow bg-white flex flex-col justify-center items-center p-4 gap-y-2'>
             <img src="/assets/SJunkie_Payment_2.jpg" alt="payment" />
             <div className='text-left'>
-              <h4 className='title'>"Lorem, ipsum dolor."</h4>
+              <h4 className='title'>&ldquo;Lorem, ipsum dolor.&ldquo;</h4>
               <p className='font-italic mt-2'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, at libero?
               </p>
               <div className='flex justify-between p-2 items-center'>

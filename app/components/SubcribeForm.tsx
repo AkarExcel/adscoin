@@ -1,9 +1,14 @@
 'use client'
-import React,{useState} from 'react'
+import React,{MouseEventHandler, useState} from 'react'
 import {sanitize} from './utils/micelleneous'
 
+interface SubcribeProps {
+  status: string | TrustedHTML | Error |null;
+  message: string | TrustedHTML | Error | null;
+  onValidated: any;
+}
 
-const SubcribeForm = ({status,message,onValidated}) => {
+const SubcribeForm: React.FC<SubcribeProps> = ({status,message,onValidated}) => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
     /**
@@ -11,9 +16,9 @@ const SubcribeForm = ({status,message,onValidated}) => {
    *
    * @return {{value}|*|boolean|null}
    */ 
-    const handleFormSubmit = (e) => {
+    const handleFormSubmit:Function = (event:any) => {
       
-      e.preventDefault()
+      event.preventDefault()
       setError('');
   
       if ( ! email ) {
@@ -62,6 +67,16 @@ const SubcribeForm = ({status,message,onValidated}) => {
       const formattedMessage = result?.[1]?.trim() ?? null;
       return formattedMessage ? sanitize( formattedMessage ) : null;
     }
+
+    const checkMarkup = () => {
+      if(error){
+        return {__html: error as string}
+      }
+      else {
+        return {__html: getMessage(message as string)}
+      }
+    }
+    
   return (
     <div>
         <form className='flex space-x-5' action="">
@@ -73,7 +88,7 @@ const SubcribeForm = ({status,message,onValidated}) => {
             placeholder='Janedoe@gmail.com' 
             id="email" 
             onKeyUp={(event) =>  {handleInputKeyEvent(event)}}/>
-            <button onClick={handleFormSubmit} className='p-2 md:p-3 rounded-sm bg-purple-500 text-white font-semibold hover:bg-purple-600 
+            <button onClick={() => {handleFormSubmit}} className='p-2 md:p-3 rounded-sm bg-purple-500 text-white font-semibold hover:bg-purple-600 
             whitespace-nowrap text-sm md:text-base'>Sign Up</button>
         </form>
         <div className="min-h-42px">
@@ -81,11 +96,11 @@ const SubcribeForm = ({status,message,onValidated}) => {
         {'error' === status || error ? (
           <div
             className="text-red-700 pt-2"
-            dangerouslySetInnerHTML={{ __html: error || getMessage( message ) }}
+            dangerouslySetInnerHTML={{ __html: {checkMarkup} }}
           />
         ) : null }
-        {'success' === status && 'error' !== status && !error && (
-          <div className="text-green-200 font-bold pt-2" dangerouslySetInnerHTML={{ __html: sanitize(message) }} />
+        {'success' === status && !error && (
+          <div className="text-green-200 font-bold pt-2" dangerouslySetInnerHTML={{ __html: sanitize(message as string) }} />
         )}
       </div>
     </div>
