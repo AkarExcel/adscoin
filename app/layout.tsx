@@ -11,10 +11,10 @@ export const metadata: Metadata = {
   keywords: "Earn online, Make money, $5 daily"
 }
 
-// const CrispWithNoSSR = dynamic(
+const CrispWithNoSSR = dynamic(
   
-//   () => import('./components/Crisp')
-// )
+  () => import('./components/Crisp')
+)
 
 export default function RootLayout({
   children,
@@ -23,7 +23,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <CrispWithNoSSR /> */}
+      <head>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+
+      <CrispWithNoSSR />
       
       <body className={inter.className}>{children}</body>
     </html>

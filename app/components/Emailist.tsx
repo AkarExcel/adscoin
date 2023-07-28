@@ -30,7 +30,7 @@ const Emailist = () => {
               repeat={0}
               className='title text-3xl md:text-4xl lg:text-6xl'
             />
-            <p className='md:text-lg md:w-1/2 font-semibold'>Utilizing the Bribe Economy, Cheap Gas Fees powered by Binance</p>
+            <p className='md:text-lg md:w-1/2 font-semibold'>Utilizing the Digital Economy, Cheap Gas Fees powered by Binance</p>
             <MailchimpSubscribe
             url={MAIL_CHIMP_URL}
             render={(props) => {

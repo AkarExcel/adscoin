@@ -16,7 +16,7 @@ const SubcribeForm: React.FC<SubcribeProps> = ({status,message,onValidated}) => 
    *
    * @return {{value}|*|boolean|null}
    */ 
-    const handleFormSubmit:Function = (event:any) => {
+    const handleFormSubmit = (event:any) => {
       
       event.preventDefault()
       setError('');
@@ -88,7 +88,7 @@ const SubcribeForm: React.FC<SubcribeProps> = ({status,message,onValidated}) => 
             placeholder='Janedoe@gmail.com' 
             id="email" 
             onKeyUp={(event) =>  {handleInputKeyEvent(event)}}/>
-            <button onClick={() => {handleFormSubmit}} className='p-2 md:p-3 rounded-sm bg-purple-500 text-white font-semibold hover:bg-purple-600 
+            <button onClick={handleFormSubmit} className='p-2 md:p-3 rounded-sm bg-purple-500 text-white font-semibold hover:bg-purple-600 
             whitespace-nowrap text-sm md:text-base'>Sign Up</button>
         </form>
         <div className="min-h-42px">
